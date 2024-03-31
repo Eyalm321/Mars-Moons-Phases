@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847C04402BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */; };
+		847C04422BB0A706007C0F12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C04412BB0A706007C0F12 /* ContentView.swift */; };
+		847C04442BB0A708007C0F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C04432BB0A708007C0F12 /* Assets.xcassets */; };
+		847C04482BB0A708007C0F12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C04472BB0A708007C0F12 /* Preview Assets.xcassets */; };
+		847C04522BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C04512BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift */; };
+		847C045C2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C045B2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift */; };
+		847C045E2BB0A708007C0F12 /* Mars_Moons_PhasesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C045D2BB0A708007C0F12 /* Mars_Moons_PhasesUITestsLaunchTests.swift */; };
+		847C046B2BB0ABF2007C0F12 /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 847C046A2BB0ABF2007C0F12 /* Objects */; };
+		8480C2262BB6892B00E3138F /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8480C2252BB6892B00E3138F /* Space.jpg */; };
+		8480C22B2BB9341100E3138F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8480C22A2BB9341100E3138F /* icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		847C044E2BB0A708007C0F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847C04342BB0A706007C0F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847C043B2BB0A706007C0F12;
+			remoteInfo = "Mars Moons Phases";
+		};
+		847C04582BB0A708007C0F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847C04342BB0A706007C0F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847C043B2BB0A706007C0F12;
+			remoteInfo = "Mars Moons Phases";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		847C043C2BB0A706007C0F12 /* Mars Moons Simulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Moons Simulation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars_Moons_PhasesApp.swift; sourceTree = "<group>"; };
+		847C04412BB0A706007C0F12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		847C04432BB0A708007C0F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		847C04452BB0A708007C0F12 /* Mars_Moons_Phases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mars_Moons_Phases.entitlements; sourceTree = "<group>"; };
+		847C04472BB0A708007C0F12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		847C044D2BB0A708007C0F12 /* Mars Moons SimulationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mars Moons SimulationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847C04512BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars_Moons_PhasesTests.swift; sourceTree = "<group>"; };
+		847C04572BB0A708007C0F12 /* Mars Moons SimulationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mars Moons SimulationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847C045B2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars_Moons_PhasesUITests.swift; sourceTree = "<group>"; };
+		847C045D2BB0A708007C0F12 /* Mars_Moons_PhasesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars_Moons_PhasesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		847C046A2BB0ABF2007C0F12 /* Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Objects; sourceTree = "<group>"; };
+		8480C2252BB6892B00E3138F /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
+		8480C22A2BB9341100E3138F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		847C04392BB0A706007C0F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C044A2BB0A708007C0F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C04542BB0A708007C0F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		847C04332BB0A706007C0F12 = {
+			isa = PBXGroup;
+			children = (
+				847C043E2BB0A706007C0F12 /* Mars Moons Phases */,
+				847C04502BB0A708007C0F12 /* Mars Moons PhasesTests */,
+				847C045A2BB0A708007C0F12 /* Mars Moons PhasesUITests */,
+				847C043D2BB0A706007C0F12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		847C043D2BB0A706007C0F12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847C043C2BB0A706007C0F12 /* Mars Moons Simulation.app */,
+				847C044D2BB0A708007C0F12 /* Mars Moons SimulationTests.xctest */,
+				847C04572BB0A708007C0F12 /* Mars Moons SimulationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		847C043E2BB0A706007C0F12 /* Mars Moons Phases */ = {
+			isa = PBXGroup;
+			children = (
+				8480C2292BB9331D00E3138F /* Images */,
+				847C046A2BB0ABF2007C0F12 /* Objects */,
+				847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */,
+				847C04412BB0A706007C0F12 /* ContentView.swift */,
+				847C04432BB0A708007C0F12 /* Assets.xcassets */,
+				847C04452BB0A708007C0F12 /* Mars_Moons_Phases.entitlements */,
+				847C04462BB0A708007C0F12 /* Preview Content */,
+			);
+			path = "Mars Moons Phases";
+			sourceTree = "<group>";
+		};
+		847C04462BB0A708007C0F12 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				847C04472BB0A708007C0F12 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		847C04502BB0A708007C0F12 /* Mars Moons PhasesTests */ = {
+			isa = PBXGroup;
+			children = (
+				847C04512BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift */,
+			);
+			path = "Mars Moons PhasesTests";
+			sourceTree = "<group>";
+		};
+		847C045A2BB0A708007C0F12 /* Mars Moons PhasesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				847C045B2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift */,
+				847C045D2BB0A708007C0F12 /* Mars_Moons_PhasesUITestsLaunchTests.swift */,
+			);
+			path = "Mars Moons PhasesUITests";
+			sourceTree = "<group>";
+		};
+		8480C2292BB9331D00E3138F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8480C22A2BB9341100E3138F /* icon.png */,
+				8480C2252BB6892B00E3138F /* Space.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		847C043B2BB0A706007C0F12 /* Mars Moons Simulation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847C04612BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons Simulation" */;
+			buildPhases = (
+				847C04382BB0A706007C0F12 /* Sources */,
+				847C04392BB0A706007C0F12 /* Frameworks */,
+				847C043A2BB0A706007C0F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mars Moons Simulation";
+			productName = "Mars Moons Phases";
+			productReference = 847C043C2BB0A706007C0F12 /* Mars Moons Simulation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		847C044C2BB0A708007C0F12 /* Mars Moons SimulationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847C04642BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons SimulationTests" */;
+			buildPhases = (
+				847C04492BB0A708007C0F12 /* Sources */,
+				847C044A2BB0A708007C0F12 /* Frameworks */,
+				847C044B2BB0A708007C0F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847C044F2BB0A708007C0F12 /* PBXTargetDependency */,
+			);
+			name = "Mars Moons SimulationTests";
+			productName = "Mars Moons PhasesTests";
+			productReference = 847C044D2BB0A708007C0F12 /* Mars Moons SimulationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		847C04562BB0A708007C0F12 /* Mars Moons SimulationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847C04672BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons SimulationUITests" */;
+			buildPhases = (
+				847C04532BB0A708007C0F12 /* Sources */,
+				847C04542BB0A708007C0F12 /* Frameworks */,
+				847C04552BB0A708007C0F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847C04592BB0A708007C0F12 /* PBXTargetDependency */,
+			);
+			name = "Mars Moons SimulationUITests";
+			productName = "Mars Moons PhasesUITests";
+			productReference = 847C04572BB0A708007C0F12 /* Mars Moons SimulationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		847C04342BB0A706007C0F12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					847C043B2BB0A706007C0F12 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					847C044C2BB0A708007C0F12 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 847C043B2BB0A706007C0F12;
+					};
+					847C04562BB0A708007C0F12 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 847C043B2BB0A706007C0F12;
+					};
+				};
+			};
+			buildConfigurationList = 847C04372BB0A706007C0F12 /* Build configuration list for PBXProject "Mars Moons Simulation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847C04332BB0A706007C0F12;
+			productRefGroup = 847C043D2BB0A706007C0F12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847C043B2BB0A706007C0F12 /* Mars Moons Simulation */,
+				847C044C2BB0A708007C0F12 /* Mars Moons SimulationTests */,
+				847C04562BB0A708007C0F12 /* Mars Moons SimulationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		847C043A2BB0A706007C0F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8480C2262BB6892B00E3138F /* Space.jpg in Resources */,
+				8480C22B2BB9341100E3138F /* icon.png in Resources */,
+				847C046B2BB0ABF2007C0F12 /* Objects in Resources */,
+				847C04482BB0A708007C0F12 /* Preview Assets.xcassets in Resources */,
+				847C04442BB0A708007C0F12 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C044B2BB0A708007C0F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C04552BB0A708007C0F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		847C04382BB0A706007C0F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847C04422BB0A706007C0F12 /* ContentView.swift in Sources */,
+				847C04402BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C04492BB0A708007C0F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847C04522BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847C04532BB0A708007C0F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847C045E2BB0A708007C0F12 /* Mars_Moons_PhasesUITestsLaunchTests.swift in Sources */,
+				847C045C2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		847C044F2BB0A708007C0F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847C043B2BB0A706007C0F12 /* Mars Moons Simulation */;
+			targetProxy = 847C044E2BB0A708007C0F12 /* PBXContainerItemProxy */;
+		};
+		847C04592BB0A708007C0F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847C043B2BB0A706007C0F12 /* Mars Moons Simulation */;
+			targetProxy = 847C04582BB0A708007C0F12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		847C045F2BB0A708007C0F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		847C04602BB0A708007C0F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		847C04622BB0A708007C0F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mars Moons Phases/Mars_Moons_Phases.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mars Moons Phases/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mars Moons Simulation";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyalMizrachi.marsMoonsSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		847C04632BB0A708007C0F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mars Moons Phases/Mars_Moons_Phases.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mars Moons Phases/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mars Moons Simulation";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyalMizrachi.marsMoonsSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		847C04652BB0A708007C0F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyalmizrachi.Mars-Moons-PhasesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mars Moons Simulation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mars Moons Simulation";
+			};
+			name = Debug;
+		};
+		847C04662BB0A708007C0F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyalmizrachi.Mars-Moons-PhasesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mars Moons Simulation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mars Moons Simulation";
+			};
+			name = Release;
+		};
+		847C04682BB0A708007C0F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyalmizrachi.Mars-Moons-PhasesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mars Moons Phases";
+			};
+			name = Debug;
+		};
+		847C04692BB0A708007C0F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyalmizrachi.Mars-Moons-PhasesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mars Moons Phases";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847C04372BB0A706007C0F12 /* Build configuration list for PBXProject "Mars Moons Simulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847C045F2BB0A708007C0F12 /* Debug */,
+				847C04602BB0A708007C0F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847C04612BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons Simulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847C04622BB0A708007C0F12 /* Debug */,
+				847C04632BB0A708007C0F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847C04642BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons SimulationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847C04652BB0A708007C0F12 /* Debug */,
+				847C04662BB0A708007C0F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847C04672BB0A708007C0F12 /* Build configuration list for PBXNativeTarget "Mars Moons SimulationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847C04682BB0A708007C0F12 /* Debug */,
+				847C04692BB0A708007C0F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 847C04342BB0A706007C0F12 /* Project object */;
+}
