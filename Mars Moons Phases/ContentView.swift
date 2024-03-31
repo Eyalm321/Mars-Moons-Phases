@@ -451,7 +451,8 @@ struct InfoPopupView: View {
                 Text("I built this app using SwiftUI & SceneKit.")
                 Text("Its a simulation of Mars moons orbital characteristics.")
                 Text("The goal is to demonstrate my abilities to control both 2D and 3D elements in view, as well as data fetching and manipulation. I'm using NASA Horizons Api to fetch real-time data about positions of celestial bodies in space and simulate those positions in the form of lights (Mars/Sun reflection).")
-                Text("I also used Blender & Adobe Substance Painter to get high-resolution texture and nicer curvatures.")
+                Text("Model was also downloaded from NASA and was edited using Blender & Adobe Substance Painter to get high-resolution texture and nicer curvatures.")
+                Text("I made the code available on Github, you can reach it by clicking on the github icon in the left top corner.")
             }
             .padding(.bottom, 5)
         }
