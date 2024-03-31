@@ -1021,7 +1021,6 @@ struct MoonInfoView: View {
                         Text(constructOrbitalPeriod(days: moon.orbitalPeriodDays, hours: moon.orbitalPeriodHours))
                     }
                     
-                    Divider()
                     
                     VStack(alignment: .leading, spacing: 8) {
                         
@@ -1043,6 +1042,7 @@ struct MoonInfoView: View {
                 }
                 .frame(width: geometry.size.width, alignment: .top)
             }
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
         }
         .foregroundColor(.white)
         .onAppear {
