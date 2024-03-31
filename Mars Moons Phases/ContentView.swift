@@ -427,10 +427,10 @@ struct InfoPopupView: View {
         VStack(spacing: 0) {
             Group {
                 if deviceOrientation.isLandscape {
-                    ScrollView { contentView }
+                    ScrollView { message }
                         .padding(.top, 1)
                 } else {
-                    contentView
+                    message
                 }
             }
             closeButton
@@ -443,7 +443,7 @@ struct InfoPopupView: View {
         .shadow(radius: 10)
     }
     
-    private var contentView: some View {
+    private var message: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("The Process").font(.title).bold()
             Group {
@@ -473,6 +473,7 @@ struct InfoPopupView: View {
 }
 
 struct ContentView: View {
+    @EnvironmentObject private var deviceOrientation: DeviceOrientation
     @State private var selectedMoon: Moon
     @State private var marsYear = 0
     @State private var sol = 0
@@ -494,67 +495,33 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Image("Space")
-                    .resizable()
-                    .ignoresSafeArea()
-                
-                if showingAppDetails {
-                    InfoPopupView(showingAppDetails: $showingAppDetails)
-                        .onTapGesture {
-                            showingAppDetails = false
-                        }
-                        .zIndex(2)
-                }
-                
-                VStack {
-                    Moon3DView(simulationState: simulationState, selectedMoon: $selectedMoon, dateChangeRate: dateChangeRate, globalLoadingState: loadingState)
-                        .aspectRatio(0.8, contentMode: .fit)
-                    Spacer()
-                }
-                .zIndex(0)
-                
-                VStack {
-                    MoonHeaderView(selectedMoon: $selectedMoon, moons: moons)
-                        .zIndex(1.0)
-                    MoonInfoView(simulationState: simulationState, moon: $selectedMoon)
-                        .zIndex(0)
-                }
+        ZStack {
+            Image("Space")
+                .resizable()
+                .ignoresSafeArea()
+            
+            Moon3DView(simulationState: simulationState, selectedMoon: $selectedMoon, dateChangeRate: dateChangeRate, globalLoadingState: loadingState)
+            
+            VStack {
+                customToolbar.padding()
+                MoonHeaderView(selectedMoon: $selectedMoon, moons: moons)
+                Spacer()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        withAnimation {
-                            showingAppDetails.toggle()
-                        }
-                    }) {
-                        Image(systemName: "questionmark.circle")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .accessibilityLabel("Show app details")
+            
+            if showingAppDetails {
+                InfoPopupView(showingAppDetails: $showingAppDetails)
+                    .onTapGesture {
+                        showingAppDetails = false
                     }
-                }
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text("Mars Moons Phases").font(.headline).foregroundStyle(.white)
-                        Text(simulationState.date, style: .date).font(.caption).foregroundStyle(.white)
-                        Text("MY: \(marsYear) Sol: \(sol)").font(.caption).foregroundStyle(.white)
-                    }
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        if let url = URL(string: "https://github.com/Eyalm321/Mars-Moons-Phases") {
-                            UIApplication.shared.open(url)
-                        }
-                    }) {
-                        Image("Github")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .accessibilityLabel("GitHub")
-                    }
-                }
+                    .zIndex(2)
             }
+            
+            GeometryReader { geometry in
+                MoonInfoView(simulationState: simulationState, moon: $selectedMoon)
+                    .position(x: geometry.size.width / 2, y: geometry.size.height - (geometry.size.height / (deviceOrientation.isLandscape ? 2 : 3) / 2))
+                    .edgesIgnoringSafeArea(.bottom)
+            }
+            .zIndex(1)
         }
         .onAppear {
             let (year, sol) = simulationState.date.getMarsTime()
@@ -566,6 +533,44 @@ struct ContentView: View {
             self.marsYear = year
             self.sol = sol
         }
+    }
+    
+    var customToolbar: some View {
+        HStack {
+            Button(action: {
+                if let url = URL(string: "https://github.com/Eyalm321/Mars-Moons-Phases") {
+                    UIApplication.shared.open(url)
+                }
+            }) {
+                Image("Github")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .accessibilityLabel("GitHub")
+            }
+            
+            Spacer()
+            
+            VStack {
+                Text("Mars Moons Phases").font(.headline).foregroundStyle(.white)
+                Text(simulationState.date, style: .date).font(.caption).foregroundStyle(.white)
+                Text("MY: \(marsYear) Sol: \(sol)").font(.caption).foregroundStyle(.white)
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                withAnimation {
+                    showingAppDetails.toggle()
+                }
+            }) {
+                Image(systemName: "questionmark.circle")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .accessibilityLabel("Show app details")
+            }
+        }
+        .padding()
+        .background(Color.black.opacity(0.5))
     }
 }
 
@@ -697,9 +702,8 @@ struct Moon3DView: View {
                     dateChangeRate: dateChangeRate,
                     globalLoadingState: globalLoadingState
                 )
-                .frame(width: deviceOrientation.isLandscape ? geometry.size.width * 1.25 : geometry.size.width,
-                       alignment: .trailing
-                )
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                .aspectRatio(0.8, contentMode: .fit)
                 .gesture(dragGesture())
             }
             
@@ -840,10 +844,12 @@ struct Moon3DView: View {
                 
                 scene.rootNode.enumerateChildNodes { (node, _) in
                     if node.name == "Phobos" {
-                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(0.78, 0.78, 0.78) : SCNVector3(0.7, 0.7, 0.7)
+                        node.position.y = deviceOrientation.isLandscape ? -2 : 1
+                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(0.7, 0.7, 0.7) : SCNVector3(0.6, 0.6, 0.6)
                     }
                     if node.name == "Deimos" {
-                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(1.15, 1.15, 1.15) : SCNVector3(0.9, 0.9, 0.9)
+                        node.position.y = deviceOrientation.isLandscape ? -2 : 1
+                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(1.1, 1.1, 1.1) : SCNVector3(0.7, 0.7, 0.7)
                     }
                 }
                 
@@ -993,63 +999,49 @@ struct MoonInfoView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Spacer(minLength: deviceOrientation.isLandscape ? 0 : geometry.size.height / 3)
-                HStack {
-                    Spacer()
-                    VStack {
-                        HStack(spacing: deviceOrientation.isLandscape ? geometry.size.width / 4 : 18) {
-                            VStack(alignment: .leading, spacing: 8) {
-                                
-                                HStack {
-                                    Image(systemName: "circle.fill")
-                                    Text("Radius")
-                                }
-                                Text(moon.radius ?? "N/A")
-                                
-                                HStack {
-                                    Image(systemName: "cube.fill")
-                                    Text("Density")
-                                }
-                                Text(moon.density ?? "N/A")
-                                
-                                HStack {
-                                    Image(systemName: "arrow.triangle.swap")
-                                    Text("Orbital Period")
-                                }
-                                Text(constructOrbitalPeriod(days: moon.orbitalPeriodDays, hours: moon.orbitalPeriodHours))
-                            }
-                            
-                            Divider()
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                
-                                if showData {
-                                    Text("Current Speed:")
-                                    Text("\(currentSpeed ?? 0, specifier: "%.2f") km/s")
-                                    
-                                    Text("Illumination:")
-                                    Text("\(illuminationPercentage ?? 0, specifier: "%.2f")%")
-                                    
-                                    Text("Distance from Mars:")
-                                    Text("\(distanceFromMars ?? 0, specifier: "%.2f") km")
-                                } else {
-                                    ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                        .padding(64)
-                                }
-                            }
+                HStack(spacing: deviceOrientation.isLandscape ? geometry.size.width / 4 : 18) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "circle.fill")
+                            Text("Radius")
                         }
-                        .frame(width: geometry.size.width, alignment: .top)
+                        Text(moon.radius ?? "N/A")
+                        
+                        HStack {
+                            Image(systemName: "cube.fill")
+                            Text("Density")
+                        }
+                        Text(moon.density ?? "N/A")
+                        
+                        HStack {
+                            Image(systemName: "arrow.triangle.swap")
+                            Text("Orbital Period")
+                        }
+                        Text(constructOrbitalPeriod(days: moon.orbitalPeriodDays, hours: moon.orbitalPeriodHours))
                     }
-                    Spacer()
+                    
+                    Divider()
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        
+                        if showData {
+                            Text("Current Speed:")
+                            Text("\(currentSpeed ?? 0, specifier: "%.2f") km/s")
+                            
+                            Text("Illumination:")
+                            Text("\(illuminationPercentage ?? 0, specifier: "%.2f")%")
+                            
+                            Text("Distance from Mars:")
+                            Text("\(distanceFromMars ?? 0, specifier: "%.2f") km")
+                        } else {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                .padding(64)
+                        }
+                    }
                 }
-                .frame(height: geometry.size.height / 2, alignment: .top)
-                
-                if deviceOrientation.isLandscape {
-                    Spacer()
-                }
+                .frame(width: geometry.size.width, alignment: .top)
             }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: deviceOrientation.isLandscape ? .center : .bottom)
         }
         .foregroundColor(.white)
         .onAppear {
