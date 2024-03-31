@@ -534,13 +534,15 @@ struct ContentView: View {
                 }
             }
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         withAnimation {
                             showingAppDetails.toggle()
                         }
                     }) {
                         Image(systemName: "questionmark.circle")
+                            .resizable()
+                            .frame(width: 24, height: 24)
                             .accessibilityLabel("Show app details")
                     }
                 }
@@ -551,17 +553,29 @@ struct ContentView: View {
                         Text("MY: \(marsYear) Sol: \(sol)").font(.caption).foregroundStyle(.white)
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        if let url = URL(string: "https://github.com/Eyalm321/Mars-Moons-Phases") {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
+                        Image("Github")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .accessibilityLabel("GitHub")
+                    }
+                }
             }
-            .onAppear {
-                let (year, sol) = simulationState.date.getMarsTime()
-                self.marsYear = year
-                self.sol = sol
-            }
-            .onChange(of: simulationState.date) { newDate, _ in
-                let (year, sol) = simulationState.date.getMarsTime()
-                self.marsYear = year
-                self.sol = sol
-            }
+        }
+        .onAppear {
+            let (year, sol) = simulationState.date.getMarsTime()
+            self.marsYear = year
+            self.sol = sol
+        }
+        .onChange(of: simulationState.date) { newDate, _ in
+            let (year, sol) = simulationState.date.getMarsTime()
+            self.marsYear = year
+            self.sol = sol
         }
     }
 }
@@ -595,7 +609,7 @@ struct MoonHeaderView: View {
         .frame(width: UIScreen.main.bounds.width, alignment: !deviceOrientation.isLandscape ? .center : .leading)
         
         .onChange(of: deviceOrientation.isLandscape) { _, newValue in
-//            print("Device orientation is now: \(newValue ? "Landscape" : "Portrait")")
+            //            print("Device orientation is now: \(newValue ? "Landscape" : "Portrait")")
         }
     }
     
@@ -627,7 +641,7 @@ class SimulationState: ObservableObject {
         
         let additionalRotationHours = speed * orbitalPeriodHours
         cumulativeRotationHours += additionalRotationHours
-    
+        
         let degreesPerHour = 360 / orbitalPeriodHours
         let additionalDegrees = additionalRotationHours * degreesPerHour
         cumulativeRotationDegrees += additionalDegrees
@@ -791,7 +805,7 @@ struct Moon3DView: View {
             setupSunlight(for: scene)
             setupMoonModels(for: scene, selectedMoon: selectedMoon)
             setupMarsLight(for: scene)
-
+            
             view.scene = scene
         }
         
@@ -910,7 +924,7 @@ struct Moon3DView: View {
         
         private func updateSunlightIntensityAndDirection(scene: SCNScene, date: Date, moonName: String) {
             self.globalLoadingState.updateLoading(true)
-    
+            
             NASA_API.shared.fetchSunPositionRelativeToMoon(moonName: moonName, on: date) { result in
                 DispatchQueue.main.async {
                     self.globalLoadingState.updateLoading(false)
@@ -1095,7 +1109,7 @@ struct MoonInfoView: View {
         guard let moonId = NASA_API.shared.bodyIds[moon.name],
               let marsId = NASA_API.shared.bodyIds["Mars"],
               let sunId = NASA_API.shared.bodyIds["Sun"],
-                let dateAtMidnight = simulationState.date.resetTime() else {
+              let dateAtMidnight = simulationState.date.resetTime() else {
             print("Invalid Body Ids or Date Conversion Failed")
             return
         }
@@ -1167,7 +1181,7 @@ struct MoonInfoView: View {
             let speedInAUDay = sqrt(vx * vx + vy * vy + vz * vz)
             let conversionFactor = 1731.46
             self.currentSpeed = speedInAUDay * conversionFactor
-    
+            
             return self.currentSpeed
         }
         
@@ -1205,7 +1219,7 @@ struct MoonInfoView: View {
             
             let cosPhaseAngle = dotProduct / (marsToMoonDistance * sunToMoonDistance)
             let phaseAngle = acos(max(min(cosPhaseAngle, 1.0), -1.0))
-        
+            
             let illuminatedFraction = 0.5 * (1 + cos(phaseAngle))
             self.illuminationPercentage = Double(illuminatedFraction * 100)
             

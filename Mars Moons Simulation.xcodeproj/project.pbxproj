@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		847C04402BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */; };
 		847C04422BB0A706007C0F12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C04412BB0A706007C0F12 /* ContentView.swift */; };
-		847C04442BB0A708007C0F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C04432BB0A708007C0F12 /* Assets.xcassets */; };
 		847C04482BB0A708007C0F12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C04472BB0A708007C0F12 /* Preview Assets.xcassets */; };
 		847C04522BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C04512BB0A708007C0F12 /* Mars_Moons_PhasesTests.swift */; };
 		847C045C2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C045B2BB0A708007C0F12 /* Mars_Moons_PhasesUITests.swift */; };
@@ -17,6 +16,8 @@
 		847C046B2BB0ABF2007C0F12 /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 847C046A2BB0ABF2007C0F12 /* Objects */; };
 		8480C2262BB6892B00E3138F /* Space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8480C2252BB6892B00E3138F /* Space.jpg */; };
 		8480C22B2BB9341100E3138F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8480C22A2BB9341100E3138F /* icon.png */; };
+		8480C2312BB939D200E3138F /* Github.png in Resources */ = {isa = PBXBuildFile; fileRef = 8480C2302BB939D200E3138F /* Github.png */; };
+		8480C2332BB93A2F00E3138F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8480C2322BB93A2E00E3138F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		847C043C2BB0A706007C0F12 /* Mars Moons Simulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Moons Simulation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars_Moons_PhasesApp.swift; sourceTree = "<group>"; };
 		847C04412BB0A706007C0F12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		847C04432BB0A708007C0F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847C04452BB0A708007C0F12 /* Mars_Moons_Phases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mars_Moons_Phases.entitlements; sourceTree = "<group>"; };
 		847C04472BB0A708007C0F12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		847C044D2BB0A708007C0F12 /* Mars Moons SimulationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mars Moons SimulationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +51,8 @@
 		847C046A2BB0ABF2007C0F12 /* Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Objects; sourceTree = "<group>"; };
 		8480C2252BB6892B00E3138F /* Space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Space.jpg; sourceTree = "<group>"; };
 		8480C22A2BB9341100E3138F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		8480C2302BB939D200E3138F /* Github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Github.png; sourceTree = "<group>"; };
+		8480C2322BB93A2E00E3138F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,7 @@
 				847C046A2BB0ABF2007C0F12 /* Objects */,
 				847C043F2BB0A706007C0F12 /* Mars_Moons_PhasesApp.swift */,
 				847C04412BB0A706007C0F12 /* ContentView.swift */,
-				847C04432BB0A708007C0F12 /* Assets.xcassets */,
+				8480C2322BB93A2E00E3138F /* Assets.xcassets */,
 				847C04452BB0A708007C0F12 /* Mars_Moons_Phases.entitlements */,
 				847C04462BB0A708007C0F12 /* Preview Content */,
 			);
@@ -140,8 +142,9 @@
 		8480C2292BB9331D00E3138F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8480C22A2BB9341100E3138F /* icon.png */,
 				8480C2252BB6892B00E3138F /* Space.jpg */,
+				8480C2302BB939D200E3138F /* Github.png */,
+				8480C22A2BB9341100E3138F /* icon.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -250,11 +253,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8480C2312BB939D200E3138F /* Github.png in Resources */,
 				8480C2262BB6892B00E3138F /* Space.jpg in Resources */,
 				8480C22B2BB9341100E3138F /* icon.png in Resources */,
 				847C046B2BB0ABF2007C0F12 /* Objects in Resources */,
+				8480C2332BB93A2F00E3138F /* Assets.xcassets in Resources */,
 				847C04482BB0A708007C0F12 /* Preview Assets.xcassets in Resources */,
-				847C04442BB0A708007C0F12 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
