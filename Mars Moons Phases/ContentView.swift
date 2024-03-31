@@ -127,30 +127,25 @@ struct PositionVector: Codable {
 struct CacheManager {
     static let shared = CacheManager()
     
-    
     func cacheData(forMoon moonId: String, date: Date, data: Data) {
         let cacheKey = generateCacheKey(forMoon: moonId, date: date)
         UserDefaults.standard.setValue(data, forKey: cacheKey)
     }
-    
     
     func getCachedData(forMoon moonId: String, date: Date) -> Data? {
         let cacheKey = generateCacheKey(forMoon: moonId, date: date)
         return UserDefaults.standard.data(forKey: cacheKey)
     }
     
-    
     func removeCachedData(forMoon moonId: String, date: Date) {
         let cacheKey = generateCacheKey(forMoon: moonId, date: date)
         UserDefaults.standard.removeObject(forKey: cacheKey)
     }
     
-    
     private func generateCacheKey(forMoon moonId: String, date: Date) -> String {
         let dateKey = formatDate(date)
         return "NASADataCache_\(moonId)_\(dateKey)"
     }
-    
     
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -204,7 +199,6 @@ class NASA_API {
                 group.leave()
                 continue
             }
-            
             
             if let cachedData = self.cache.getCachedData(forMoon: bodyId, date: startDate), let cachedString = String(data: cachedData, encoding: .utf8) {
                 results[body] = cachedString
@@ -478,9 +472,6 @@ struct InfoPopupView: View {
     }
 }
 
-
-
-
 struct ContentView: View {
     @State private var selectedMoon: Moon
     @State private var marsYear = 0
@@ -501,8 +492,6 @@ struct ContentView: View {
         self.moons = defaultMoons
         _selectedMoon = State(initialValue: defaultMoons.first ?? Moon(name: "Unknown"))
     }
-    
-    
     
     var body: some View {
         NavigationView {
@@ -620,7 +609,6 @@ struct MoonHeaderView: View {
     }
 }
 
-
 class SimulationState: ObservableObject {
     var selectedMoon: Moon
     @Published var cumulativeRotationDegrees: Double = 0 {
@@ -652,24 +640,22 @@ class SimulationState: ObservableObject {
         checkForOrbitCompletion()
     }
     
-    
     func checkForOrbitCompletion() {
-        guard let orbitalPeriodHours = selectedMoon.orbitalPeriodHours, orbitalPeriodHours > 0 else { return }
+        guard let orbitalPeriodHours = selectedMoon.orbitalPeriodHours, orbitalPeriodHours != 0 else { return }
         
         let orbitCountInDay = 24 / orbitalPeriodHours
+        let completedOrbits = abs(rotationCount)
         
-        if rotationCount >= orbitCountInDay {
-            let daysToAdd = Int(rotationCount / orbitCountInDay)
-            
-            if let newDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: date) {
+        if completedOrbits >= orbitCountInDay {
+            let daysChange = Int(rotationCount / orbitCountInDay)
+            if let newDate = Calendar.current.date(byAdding: .day, value: daysChange, to: date) {
                 date = newDate
-                rotationCount -= Double(daysToAdd) * orbitCountInDay
+                rotationCount -= Double(daysChange) * orbitCountInDay
                 cumulativeRotationHours = rotationCount * orbitalPeriodHours
             }
         }
     }
 }
-
 
 extension Date {
     func resetTime() -> Date? {
@@ -693,9 +679,6 @@ extension Date {
     }
 }
 
-
-
-
 struct Moon3DView: View {
     @ObservedObject var simulationState: SimulationState
     @EnvironmentObject var deviceOrientation: DeviceOrientation
@@ -704,7 +687,6 @@ struct Moon3DView: View {
     @State private var rotation = SCNVector3(0, 0, 0)
     @State private var initialTouchLocation: CGPoint = .zero
     @ObservedObject var globalLoadingState = LoadingState()
-    
     
     var body: some View {
         ZStack {
@@ -742,7 +724,8 @@ struct Moon3DView: View {
     private func dragGesture() -> some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
-                let rotationSpeed = 0.025
+                let dragDirection = value.translation.width > 0 ? 1 : -1
+                let rotationSpeed = 0.025 * Double(dragDirection)
                 self.simulationState.updateRotation(with: rotationSpeed)
             }
     }
@@ -973,8 +956,6 @@ struct Moon3DView: View {
             let rotationRadians = orbitsCompleted * 2 * Double.pi
             return Float(rotationRadians)
         }
-        
-        
         
         private func adjustSunlight(_ sunLightNode: SCNNode, forSol sol: Int, andMarsYear marsYear: Int) {
             let angle = Float(sol % 360) * (.pi / 180)
