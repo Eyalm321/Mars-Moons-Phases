@@ -846,7 +846,7 @@ struct Moon3DView: View {
                 scene.rootNode.enumerateChildNodes { (node, _) in
                     if node.name == "Phobos" {
                         node.position.y = deviceOrientation.isLandscape ? -2 : 1
-                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(0.7, 0.7, 0.7) : SCNVector3(0.6, 0.6, 0.6)
+                        node.scale = self.deviceOrientation.isLandscape ? SCNVector3(0.8, 0.8, 0.8) : SCNVector3(0.6, 0.6, 0.6)
                     }
                     if node.name == "Deimos" {
                         node.position.y = deviceOrientation.isLandscape ? -2 : 1
@@ -1000,7 +1000,7 @@ struct MoonInfoView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HStack(spacing: deviceOrientation.isLandscape ? geometry.size.width / 4 : 18) {
+                HStack(spacing: deviceOrientation.isLandscape ? geometry.size.width / 2 : 18) {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Image(systemName: "circle.fill")
